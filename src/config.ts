@@ -1,0 +1,23 @@
+export const SITE = {
+  website: "https://env1bot.github.io",
+  author: "Jevgeni D.",
+  profile: "https://github.com/env1bot",
+  desc: "Site Reliability Engineer. Production operations, observability, automation.",
+  title: "Jevgeni D.",
+  ogImage: "og.png",
+  lightAndDarkMode: true,
+  postPerIndex: 5,
+  postPerPage: 10,
+  scheduledPostMargin: 15 * 60 * 1000,
+  showArchives: true,
+  showBackButton: true,
+  editPost: {
+    enabled: false,
+    text: "Edit page",
+    url: "https://github.com/env1bot/env1bot.github.io/edit/main/",
+  },
+  dynamicOgImage: false,
+  dir: "ltr",
+  lang: "en",
+  timezone: "UTC",
+} as const;
