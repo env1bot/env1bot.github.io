@@ -1,11 +1,10 @@
 import type { Props } from "astro";
 import IconGitHub from "@/assets/icons/IconGitHub.svg";
 import IconLinkedin from "@/assets/icons/IconLinkedin.svg";
+import IconRss from "@/assets/icons/IconRss.svg";
 import IconBrandX from "@/assets/icons/IconBrandX.svg";
 import IconWhatsapp from "@/assets/icons/IconWhatsapp.svg";
-import IconFacebook from "@/assets/icons/IconFacebook.svg";
 import IconTelegram from "@/assets/icons/IconTelegram.svg";
-import IconPinterest from "@/assets/icons/IconPinterest.svg";
 import IconMail from "@/assets/icons/IconMail.svg";
 import { SITE } from "@/config";
 
@@ -35,6 +34,12 @@ export const SOCIALS: Social[] = [
     linkTitle: `Email ${SITE.title}`,
     icon: IconMail,
   },
+  {
+    name: "RSS",
+    href: `${SITE.website}/rss.xml`,
+    linkTitle: "RSS feed",
+    icon: IconRss,
+  },
 ] as const;
 
 export const SHARE_LINKS: Social[] = [
@@ -43,12 +48,6 @@ export const SHARE_LINKS: Social[] = [
     href: "https://wa.me/?text=",
     linkTitle: `Share this post via WhatsApp`,
     icon: IconWhatsapp,
-  },
-  {
-    name: "Facebook",
-    href: "https://www.facebook.com/sharer.php?u=",
-    linkTitle: `Share this post on Facebook`,
-    icon: IconFacebook,
   },
   {
     name: "X",
@@ -61,12 +60,6 @@ export const SHARE_LINKS: Social[] = [
     href: "https://t.me/share/url?url=",
     linkTitle: `Share this post via Telegram`,
     icon: IconTelegram,
-  },
-  {
-    name: "Pinterest",
-    href: "https://pinterest.com/pin/create/button/?url=",
-    linkTitle: `Share this post on Pinterest`,
-    icon: IconPinterest,
   },
   {
     name: "Mail",

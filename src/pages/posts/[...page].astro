@@ -9,6 +9,7 @@ import Card from "@/components/Card.astro";
 import Pagination from "@/components/Pagination.astro";
 import getSortedPosts from "@/utils/getSortedPosts";
 import { SITE } from "@/config";
+import IconRss from "@/assets/icons/IconRss.svg";
 
 export const getStaticPaths = (async ({ paginate }) => {
   const posts = await getCollection("blog", ({ data }) => !data.draft);
@@ -21,6 +22,17 @@ const { page } = Astro.props;
 <Layout title={`Posts | ${SITE.title}`}>
   <Header />
   <Main pageTitle="Posts" pageDesc="All the articles I've posted.">
+    <a
+      slot="header-action"
+      href="/rss.xml"
+      target="_blank"
+      rel="noopener noreferrer"
+      title="RSS feed"
+      class="flex items-center gap-1.5 text-xs opacity-50 hover:opacity-100 transition-opacity"
+    >
+      <IconRss class="size-4" />
+      RSS
+    </a>
     <ul>
       {page.data.map(data => <Card {...data} />)}
     </ul>
