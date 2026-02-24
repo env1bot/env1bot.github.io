@@ -3,6 +3,7 @@ author: Jevgeni D.
 pubDatetime: 2026-03-01T00:00:00Z
 title: "Designing an Escalation Chain That Actually Works"
 description: "What I learned from inheriting a broken escalation process and rebuilding it across multiple production environments under 24/7 support."
+wip: true
 tags:
   - sre
   - incident-management
