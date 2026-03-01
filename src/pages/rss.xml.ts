@@ -17,7 +17,7 @@ export async function GET() {
     site: SITE.website,
     items: sortedPosts.map(({ data, id, filePath, body }) => ({
       link: getPath(id, filePath),
-      title: data.title,
+      title: data.wip ? `[WIP] ${data.title}` : data.title,
       description: data.description,
       pubDate: new Date(data.modDatetime ?? data.pubDatetime),
       content: sanitizeHtml(parser.render(body ?? ""), {

@@ -95,7 +95,7 @@ const nextPost =
       transition:name={slugifyStr(title.replaceAll(".", "-"))}
       class="inline-block text-2xl font-bold text-accent sm:text-3xl"
     >
-      {title}
+      {wip ? `[WIP] ${title}` : title}
     </h1>
     <div class="my-2 flex items-center gap-2">
       <Datetime {pubDatetime} {modDatetime} {timezone} size="lg" />
@@ -108,11 +108,6 @@ const nextPost =
       >
       <EditPost {hideEditPost} {post} class="max-sm:hidden" />
     </div>
-    {wip && (
-      <p class="mb-6 rounded border border-dashed border-border px-4 py-3 text-sm opacity-60">
-        Work in progress — this post is not finished yet.
-      </p>
-    )}
     <article
       id="article"
       class="app-prose mt-8 w-full max-w-app prose-pre:bg-(--shiki-light-bg) dark:prose-pre:bg-(--shiki-dark-bg)"

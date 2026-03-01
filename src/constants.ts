@@ -36,7 +36,7 @@ export const SOCIALS: Social[] = [
   },
   {
     name: "RSS",
-    href: `${SITE.website}/rss.xml`,
+    href: "/rss.xml",
     linkTitle: "RSS feed",
     icon: IconRss,
   },
