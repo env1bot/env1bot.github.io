@@ -1,0 +1,41 @@
+# Check for broken links after deployment and on a weekly schedule.
+# Creates a GitHub issue when broken links are found.
+name: Links
+
+on:
+  workflow_run:
+    workflows: [CI]
+    types: [completed]
+    branches: [main]
+  schedule:
+    - cron: '0 6 * * 1' # Monday 06:00 UTC
+
+permissions:
+  contents: read
+  issues: write
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    # Only run on successful deploy or scheduled trigger
+    if: >-
+      github.event_name == 'schedule' ||
+      github.event.workflow_run.conclusion == 'success'
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+
+      - name: Check links
+        uses: lycheeverse/lychee-action@f81112d0d2814ded911bd23e3beaa9dda9f8ca55 # v2.1.0
+        with:
+          args: '--config lychee.toml dist/'
+          fail: true
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Create issue on failure
+        if: failure()
+        uses: peter-evans/create-issue-from-file@e8ef132d6df98ed982188e460bbe3b5d4ef3a9cd # v5.0.1
+        with:
+          title: 'Broken links detected'
+          content-filepath: ./lychee/out.md
+          labels: bug,automated
