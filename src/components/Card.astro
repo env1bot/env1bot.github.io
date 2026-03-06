@@ -26,15 +26,15 @@ const { title, description, wip, ...props } = data;
       style={{ viewTransitionName: slugifyStr(title.replaceAll(".", "-")) }}
     >
       {title}
+      {
+        wip && (
+          <span class="ms-2 rounded-sm bg-muted px-1.5 py-0.5 text-xs font-normal opacity-70">
+            WIP
+          </span>
+        )
+      }
     </Heading>
   </a>
-  {
-    wip && (
-      <span class="ms-2 rounded-sm bg-muted px-1.5 py-0.5 text-xs opacity-60">
-        WIP
-      </span>
-    )
-  }
   <Datetime {...props} />
   <p>{description}</p>
 </li>
