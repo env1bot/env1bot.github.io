@@ -1,5 +1,5 @@
 ---
-author: Jevgeni D.
+author: Jevgeni Diede
 pubDatetime: 2026-03-04T00:00:00Z
 title: "Operational Ownership Across Systems You Did Not Build"
 description: "What it means to be responsible for production reliability across multiple independent systems with different architectures, different stakeholders, and different failure modes."

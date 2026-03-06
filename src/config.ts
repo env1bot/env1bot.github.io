@@ -1,9 +1,9 @@
 export const SITE = {
   website: "https://env1bot.github.io",
-  author: "Jevgeni D.",
+  author: "Jevgeni Diede",
   profile: "https://github.com/env1bot",
   desc: "Site Reliability Engineer. Production operations, observability, automation.",
-  title: "Jevgeni D.",
+  title: "Jevgeni Diede",
   ogImage: "og.png",
   lightAndDarkMode: true,
   postPerIndex: 5,

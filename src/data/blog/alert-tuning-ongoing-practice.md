@@ -1,5 +1,5 @@
 ---
-author: Jevgeni D.
+author: Jevgeni Diede
 pubDatetime: 2026-03-04T00:00:00Z
 title: "Alert Tuning Is Not a One-Time Fix"
 description: "On the difference between alerts that need threshold adjustment and alerts that are telling you the architecture is wrong."
