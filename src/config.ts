@@ -1,7 +1,7 @@
 export const SITE = {
-  website: "https://env1bot.github.io",
+  website: "https://idipi.github.io",
   author: "Jevgeni Diede",
-  profile: "https://github.com/env1bot",
+  profile: "https://github.com/idipi",
   desc: "Site Reliability Engineer. Production operations, observability, automation.",
   title: "Jevgeni Diede",
   ogImage: "og.png",
@@ -14,7 +14,7 @@ export const SITE = {
   editPost: {
     enabled: false,
     text: "Edit page",
-    url: "https://github.com/env1bot/env1bot.github.io/edit/main/",
+    url: "https://github.com/idipi/idipi.github.io/edit/main/",
   },
   dynamicOgImage: false,
   dir: "ltr",

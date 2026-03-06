@@ -32,4 +32,4 @@ Available for remote or hybrid (Finland) SRE roles. Building this site's CI/CD p
 
 ---
 
-[GitHub &rarr;](https://github.com/env1bot) &nbsp; [LinkedIn &rarr;](https://linkedin.com/in/enotik) &nbsp; [CV &rarr;](/cv.pdf)
+[GitHub &rarr;](https://github.com/idipi) &nbsp; [LinkedIn &rarr;](https://linkedin.com/in/enotik) &nbsp; [CV &rarr;](/cv.pdf)
