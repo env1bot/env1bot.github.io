@@ -14,6 +14,8 @@ const recentPosts = getSortedPosts(allPosts).slice(0, 3);
 ---
 
 <Layout title={SITE.title} description={SITE.desc}>
+<script data-goatcounter="https://env1bot.goatcounter.com/count"
+        async src="//gc.zgo.at/count.js"></script>
   <Header />
   <main id="main-content" class="app-layout pb-12">
     <section class="border-b border-border py-10 sm:py-16">
@@ -21,6 +23,8 @@ const recentPosts = getSortedPosts(allPosts).slice(0, 3);
       <p class="mt-3 max-w-lg text-base leading-relaxed opacity-70 sm:text-lg">
         {SITE.desc}
       </p>
+      <script data-goatcounter="https://env1bot.goatcounter.com/count"
+        async src="//gc.zgo.at/count.js"></script>
       <div class="mt-5 flex flex-wrap gap-4">
         {
           SOCIALS.map(s => (
@@ -155,12 +159,6 @@ const recentPosts = getSortedPosts(allPosts).slice(0, 3);
 
 <script>
   document.addEventListener("astro:page-load", () => {
-    sessionStorage.setItem("backUrl", "/projects");
+    sessionStorage.setItem("backUrl", "/");
   });
 </script>
-
-<script
-  is:inline
-  data-goatcounter="https://env1bot.goatcounter.com/count"
-  async
-  src="//gc.zgo.at/count.js"></script>
