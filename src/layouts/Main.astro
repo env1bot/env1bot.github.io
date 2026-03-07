@@ -34,12 +34,28 @@ const backUrl = SITE.showBackButton ? Astro.url.pathname : "/";
 </main>
 
 <script>
-  document.addEventListener("astro:page-load", () => {
+  function trackListingPage() {
     const mainContent: HTMLElement | null =
       document.querySelector("#main-content");
     const backUrl = mainContent?.dataset?.backurl;
-    if (backUrl) {
-      sessionStorage.setItem("backUrl", backUrl);
+    if (!backUrl) return;
+
+    sessionStorage.setItem("backUrl", backUrl);
+
+    // Restore scroll position when returning to this page
+    const savedScroll = sessionStorage.getItem("backUrlScroll");
+    if (savedScroll) {
+      window.scrollTo(0, parseInt(savedScroll, 10));
+      sessionStorage.removeItem("backUrlScroll");
     }
-  });
+
+    // Save scroll position before leaving
+    document.addEventListener("astro:before-preparation", () => {
+      if (document.querySelector("#main-content")) {
+        sessionStorage.setItem("backUrlScroll", String(window.scrollY));
+      }
+    });
+  }
+
+  document.addEventListener("astro:page-load", trackListingPage);
 </script>

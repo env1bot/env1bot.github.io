@@ -21,15 +21,14 @@ import { SITE } from "@/config";
 
 <script>
   function setupGoBack() {
-    const backButton = document.querySelector("#back-button");
+    const backButton: HTMLAnchorElement | null =
+      document.querySelector("#back-button");
     if (!backButton) return;
 
-    backButton.addEventListener("click", e => {
-      if (window.history.length > 1) {
-        e.preventDefault();
-        window.history.back();
-      }
-    });
+    const backUrl = sessionStorage.getItem("backUrl");
+    if (backUrl) {
+      backButton.href = backUrl;
+    }
   }
 
   document.addEventListener("astro:page-load", setupGoBack);
