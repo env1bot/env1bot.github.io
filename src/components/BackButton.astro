@@ -20,18 +20,18 @@ import { SITE } from "@/config";
 }
 
 <script>
-  /* Update Search Praam */
-  function updateGoBackUrl() {
-    const backButton: HTMLAnchorElement | null =
-      document.querySelector("#back-button");
+  function setupGoBack() {
+    const backButton = document.querySelector("#back-button");
+    if (!backButton) return;
 
-    const backUrl = sessionStorage.getItem("backUrl");
-
-    if (backUrl && backButton) {
-      backButton.href = backUrl;
-    }
+    backButton.addEventListener("click", e => {
+      if (window.history.length > 1) {
+        e.preventDefault();
+        window.history.back();
+      }
+    });
   }
 
-  document.addEventListener("astro:page-load", updateGoBackUrl);
-  updateGoBackUrl();
+  document.addEventListener("astro:page-load", setupGoBack);
+  setupGoBack();
 </script>

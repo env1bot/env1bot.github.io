@@ -29,12 +29,6 @@ export const SOCIALS: Social[] = [
     icon: IconLinkedin,
   },
   {
-    name: "Email",
-    href: "mailto:jevgeni.diede@proton.me",
-    linkTitle: `Email ${SITE.title}`,
-    icon: IconMail,
-  },
-  {
     name: "RSS",
     href: "/rss.xml",
     linkTitle: "RSS feed",
