@@ -1,15 +1,16 @@
----
 author: Jevgeni Diede
 pubDatetime: 2026-03-04T00:00:00Z
 title: "Alert Tuning Is Not a One-Time Fix"
 description: "On the difference between alerts that need threshold adjustment and alerts that are telling you the architecture is wrong."
 wip: true
 tags:
+
   - sre
   - observability
   - alerting
   - prometheus
   - on-call
+
 ---
 
 Every SRE team I have seen goes through the same cycle with alerting.
@@ -34,12 +35,50 @@ often?**
 These require completely different responses. One is a monitoring fix.
 The other is an engineering conversation.
 
+```yaml
+# Extracted YAML from file opentelemetry-metrics.example.yaml
+...
+  config : |
+    receivers:
+      k8s_cluster:
+        collection_interval: 10s
+        node_conditions_to_report:
+          - Ready
+          - MemoryPressure
+          - DiskPressure
+          - NetworkUnavailable
+        allocatable_types_to_report:
+          - cpu
+          - memory
+          - storage
+          - ephemeral-storage
+      kubeletstats:
+        collection_interval: 10s
+        auth_type: serviceAccount
+        endpoint: "${env:K8S_NODE_NAME}:10250"
+        insecure_skip_verify: true
+        extra_metadata_labels:
+          - k8s.volume.type
+        k8s_api_config:
+          auth_type: serviceAccount
+        metric_groups:
+          - node
+          - pod
+          - volume
+          - container
+  ...
+```
+
+
+
 <!-- TODO: Add a concrete example here. Something like a disk usage
 alert that kept firing - was the threshold too low, or was the
 application leaking temporary files? Without revealing client details,
 walk through the diagnostic process. -->
 
 ## What I Did In Practice
+
+![Screenshot of a chart that shows a metric, its dynamic threshold limits, and some alerts that fired.](https://learn.microsoft.com/en-us/azure/azure-monitor/alerts/media/alerts-dynamic-thresholds/threshold-picture-8bit.png#lightbox)
 
 During my time supporting multiple Kubernetes-based production
 environments, I reviewed alerting rules on an ongoing basis - not in
