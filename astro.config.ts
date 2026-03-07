@@ -27,6 +27,7 @@ export default defineConfig({
       defaultColor: false,
       wrap: false,
       transformers: [
+        { name: "language-class", code(node) { this.addClassToHast(node, `language-${this.options.lang}`) } },
         transformerFileName({ style: "v2", hideDot: false }),
         transformerNotationHighlight(),
         transformerNotationWordHighlight(),
@@ -51,6 +52,11 @@ export default defineConfig({
   env: {
     schema: {
       PUBLIC_GOOGLE_SITE_VERIFICATION: envField.string({
+        access: "public",
+        context: "client",
+        optional: true,
+      }),
+      PUBLIC_TG_SITE_VERIFICATION: envField.string({
         access: "public",
         context: "client",
         optional: true,
