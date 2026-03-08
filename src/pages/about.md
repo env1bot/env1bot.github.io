@@ -3,33 +3,38 @@ layout: ../layouts/AboutLayout.astro
 title: "About"
 ---
 
-Site Reliability Engineer with 3 years of hands-on production experience across heterogeneous Kubernetes environments on AWS and Azure. Operated under 24/7 support with contractual SLA obligations (99.9%).
+Site Reliability Engineer with 3 years of production operations experience. Based in Finland.
 
-Most recently led operational ownership of 8-10 independent production systems and coordinated a team of 5-8 SRE engineers - handling work allocation, on-call scheduling, escalation design, and incident ownership. Built processes that stuck: blameless postmortems, unified documentation standards, structured escalation chains.
+At Corewide, I was responsible for reliability across 8-10 independent production environments on AWS and Azure - from EKS-based fintech platforms and asynchronous video interviewing systems to IoT backends, content creator tools, and infrastructure for a US law firm. Different stacks, different architectures, same SLA obligations (99.9%). Clients spanned the US, UK, and Switzerland across industries that had nothing in common except needing their systems to stay up.
 
-I care about systems that are observable, on-call that is sustainable, and operations that don't depend on heroics.
+In my last year I led the operational side of a 5-8 person SRE team: on-call scheduling, work allocation, escalation design, incident ownership, and postmortems. I was the first person to get paged when something broke, day or night. I built the escalation structure and documentation standards that made that sustainable.
+
+Before Corewide, I spent a year at PrivatBank operating infrastructure at a completely different scale - thousands of endpoints across every branch and office of one of Ukraine's largest banks. Enterprise monitoring, not cloud-native. That contrast shaped how I think about reliability: the principles are the same whether you're running Kubernetes clusters or maintaining bank branch networks.
 
 ## What I work with
 
-**Infrastructure:** Kubernetes, Docker, AWS, Azure, Linux
+**Infrastructure:** Kubernetes, Helm, Docker, AWS, Azure, Linux
 
 **Observability:** Prometheus (including custom exporters), Grafana, Loki, Zabbix, blackbox monitoring
 
 **Automation & IaC:** Python, Bash, Ansible, Terraform, GitLab CI, GitHub Actions
 
-**Reliability practices:** SLO/SLI tracking, incident management, blameless postmortems, runbooks
+**SRE practices:** SLO/SLI tracking tied to contractual obligations, incident management, blameless postmortems, escalation design
 
-## What I bring beyond tooling
+**Application ecosystems I've operated:** Ruby/Rails, PHP, .NET/C#, Node.js, Python
+
+## Beyond tooling
 
 - Operational leadership across distributed environments and teams
-- Structured incident response - from triage to postmortem to follow-up
-- A habit of automating what repeats and documenting what doesn't
-- Mentoring, technical interviews, and cross-team coordination
+- Structured incident response - from triage through postmortem to tracked follow-ups
+- Mentoring, technical interviews, cross-team coordination
+
+Automate what repeats, document what doesn't.
 
 ## Currently
 
-Available for remote or hybrid (Finland) SRE roles. Building this site's CI/CD pipeline as an infrastructure project in its own right. Filling gaps in Helm and Terraform authoring.
+Available for remote or hybrid (Finland) SRE roles. Building this site's CI/CD pipeline as an infrastructure project. Currently focused on Helm chart development and Terraform module authoring.
 
 ---
 
-[GitHub &rarr;](https://github.com/idipi) &nbsp; [LinkedIn &rarr;](https://linkedin.com/in/enotik) &nbsp; [CV &rarr;](/cv.pdf)
+[GitHub &rarr;](https://github.com/env1bot) &nbsp; [LinkedIn &rarr;](https://linkedin.com/in/enotik) &nbsp; [CV &rarr;](/cv.pdf)
